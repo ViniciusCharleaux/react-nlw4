@@ -1,5 +1,6 @@
 import styles from '../styles/components/ChallengeBox.module.css'
 import { FcUp } from "react-icons/fc";
+import { FcSportsMode } from "react-icons/fc";
 
 
 export function ChallengeBox(){
@@ -14,6 +15,7 @@ export function ChallengeBox(){
                 <div className={styles.challengeActive}> 
                     <header>Ganhe 400XP</header>
                     <main>
+                        <FcSportsMode className={styles.icon} size={130}/>
                         <strong> Novo Desafio </strong>
                         <p>Levante e faça uma caminhada de 3 minutos.</p>
                     </main>
