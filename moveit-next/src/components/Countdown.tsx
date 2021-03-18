@@ -1,10 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import styles from '../styles/components/Countdown.module.css'
 import { FcOk } from "react-icons/fc";
+import { ChallengesContext } from '../contexts/ChallengesContexts';
 
 let countdownTimeout : NodeJS.Timeout;
 
+
 export function Countdown(){
+    const { startNewChallenge } = useContext(ChallengesContext);
+
     const [time, setTime] = useState(6);
     const [isActive, setIsActive] = useState(false);    
     const [hasFinished, setHasFinished] = useState(false);
@@ -33,6 +37,7 @@ export function Countdown(){
         }else if(isActive && time === 0) {
             setHasFinished(true);
             setIsActive(false);
+            startNewChallenge();
         }
     }, [isActive, time])
 
@@ -56,7 +61,7 @@ export function Countdown(){
                     className={styles.countdownButton}                 
                     >
                     Ciclo Encerrado
-                    <FcOk/>
+                    <FcOk className={styles.icon}/>
                 </button>
                 
             ):(

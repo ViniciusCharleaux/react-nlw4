@@ -24,6 +24,7 @@ export default function Home() {
         </div>
         <div>
           <ChallengeBox />
+          <p>v0.8.0</p>
         </div>
       </section>
     </div>
