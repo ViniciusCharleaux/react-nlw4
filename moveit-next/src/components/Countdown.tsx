@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/components/Countdown.module.css'
+import { FcOk } from "react-icons/fc";
 
 let countdownTimeout : NodeJS.Timeout;
 
@@ -52,10 +53,12 @@ export function Countdown(){
             { hasFinished ? (
                 <button 
                     disabled
-                    className={styles.countdownButton}
+                    className={styles.countdownButton}                 
                     >
-                    Ciclo encerrado
+                    Ciclo Encerrado
+                    <FcOk/>
                 </button>
+                
             ):(
                 <>
                     {isActive ? (
