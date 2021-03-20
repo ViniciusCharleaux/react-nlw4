@@ -6,13 +6,13 @@ import { ChallengesContext } from '../contexts/ChallengesContexts';
 
 
 export function ChallengeBox(){
-    const {activeChallenge, resetChallenge} = useContext(ChallengesContext);
+    const {activeChallenge, resetChallenge, completeChallenge} = useContext(ChallengesContext);
 
     return (
         <div className={styles.challengeBoxContainer}>
             { activeChallenge ? (
                 <div className={styles.challengeActive}> 
-                    <header>Ganhe {activeChallenge.amount}</header>
+                    <header>Ganhe {activeChallenge.amount}XP</header>
                     <main>
                         <FcSportsMode className={styles.icon} size={130}/>
                         <strong> Novo Desafio </strong>
@@ -29,6 +29,7 @@ export function ChallengeBox(){
                         <button 
                             type="button"
                             className={styles.challengeSucceededButton}
+                            onClick={completeChallenge}
                         >
                             Completei
                         </button>
@@ -46,7 +47,6 @@ export function ChallengeBox(){
                     Avance de level completando desafios!
                 </p>
                 </div>
-
             )}
         </div>
     )
