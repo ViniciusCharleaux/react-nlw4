@@ -8,5 +8,15 @@
         "type" : "body",
         "description": "Caminhe pelo o local que você está por 3 minutos sem parar.",
         "amount": 70
+    },
+    {
+        "type" : "body",
+        "description": "Beba um copo de água e puxe a cabeça para um lado até sentir uma leve pressão por 1 minuto cada lado.",
+        "amount": 60
+    },
+    {
+        "type" : "body",
+        "description": "Coloque as mãos sobre a nuca e pressone a cabeça para baixo.",
+        "amount": 100
     }
 ]
