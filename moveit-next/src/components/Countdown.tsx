@@ -2,44 +2,22 @@ import { useState, useEffect, useContext } from 'react';
 import styles from '../styles/components/Countdown.module.css'
 import { FcOk } from "react-icons/fc";
 import { ChallengesContext } from '../contexts/ChallengesContexts';
-
-let countdownTimeout : NodeJS.Timeout;
-
+import { CountdownContext } from '../contexts/CountdownContext';
 
 export function Countdown(){
-    const { startNewChallenge } = useContext(ChallengesContext);
 
-    const [time, setTime] = useState(6);
-    const [isActive, setIsActive] = useState(false);    
-    const [hasFinished, setHasFinished] = useState(false);
-
-    const min = Math.floor(time / 60);
-    const sec = time%60;
+    const { 
+        min, 
+        sec, 
+        hasFinished, 
+        isActive,
+        startCountdown,
+        resetCountdown
+    } =  useContext(CountdownContext);
 
     const [minuteLeft, minuteRight] = String(min).padStart(2, '0').split('');
     const [secondLeft, secondRight] = String(sec).padStart(2, '0').split('');
 
-    function startCountdown(){
-        setIsActive(true);
-    }
-
-    function resetCountdown(){
-        clearTimeout(countdownTimeout); //cancelando um timeout
-        setIsActive(false);
-        setTime(6);
-    }
-
-    useEffect(() =>{
-        if (isActive && time > 0){
-            countdownTimeout = setTimeout(() => {
-                setTime(time - 1);
-            }, 1000)
-        }else if(isActive && time === 0) {
-            setHasFinished(true);
-            setIsActive(false);
-            startNewChallenge();
-        }
-    }, [isActive, time])
 
     return (
         <div>
