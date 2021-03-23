@@ -40,7 +40,7 @@ export default function Home(props) {
             </div>
             <div>
               <ChallengeBox />
-              <p>v1.0.0</p>
+              <p>v1.0.1</p>
             </div>
           </section>
         </CountdownProvider>

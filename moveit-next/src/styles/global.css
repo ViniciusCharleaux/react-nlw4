@@ -27,6 +27,7 @@
 @media(max-width: 720px){
     html{
         font-size: 83.5%;
+        flex-direction: column;
     }
 }
 
