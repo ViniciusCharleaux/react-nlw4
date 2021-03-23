@@ -16,7 +16,12 @@
     },
     {
         "type" : "body",
-        "description": "Coloque as mãos sobre a nuca e pressone a cabeça para baixo.",
-        "amount": 100
+        "description": "Coloque as mãos sobre a nuca e pressione a cabeça para baixo.",
+        "amount": 75
+    },
+    {
+        "type" : "body",
+        "description": "Em pé, tampe os seus olhos com suas mãos por aproximadamente 2minutos, aplicando uma leve pressão",
+        "amount": 75
     }
 ]
